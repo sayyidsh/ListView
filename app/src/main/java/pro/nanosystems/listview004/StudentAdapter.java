@@ -25,6 +25,14 @@ public class StudentAdapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
+        //----- color odd and even
+        if(cursor.getPosition()%2==1) {
+            view.setBackgroundColor(context.getResources().getColor(R.color.background_odd));
+        }
+        else {
+            view.setBackgroundColor(context.getResources().getColor(R.color.background_even));
+        }
+        //--------- color odd and even
         TextView idView, nameView, classView;
         idView =  view.findViewById(R.id.idView);
         nameView = view.findViewById(R.id.nameView);
